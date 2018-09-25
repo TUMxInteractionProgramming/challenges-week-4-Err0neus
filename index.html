@@ -10,11 +10,20 @@
     <!-- embed external css -->
     <link rel="stylesheet" href="css/style.css" />
 
+    <!-- #7 include the Font Awesome library-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
     <!-- #6 embed #jquery -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
+    <!-- #7 #external #channels js file-->
+    <script src="js/channels.js"></script>
+
     <!-- #6 #external #action-->
     <script src="js/script.js"></script>
+
+
+
 </head>
 <body>
 
@@ -30,53 +39,58 @@
     <!-- CHANNELS -->
     <ul>
         <!-- #6 #channels #click calls our switchChannel with the corresponding name as an argument -->
-        <li onclick="switchChannel('#Yummy')">
+        <!-- #7 changing function arg from text to object names from channels.js-->
+        <li onclick="switchChannel(yummy)">
             #Yummy
             <!-- #5 #channels #icons now grouped in .channel-meta span -->
             <span class="channel-meta">
-                <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
-                <!-- #5 #channels #icons now with chevron -->
-                <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
+                <!-- #7 Replace all stars and chevrons with Font Awesome icons -->
+                <i class="far fa-star"></i>
+                <i class="fas fa-chevron-right"></i>
             </span>
         </li>
         <!-- #6 #channels #click calls our switchChannel with the corresponding name as an argument -->
-        <li class="selected" onclick="switchChannel('#SevenContinents')">
+        <!-- #7 changing function arg from text to object names from channels.js-->
+        <li class="selected" onclick="switchChannel(sevenContinents)">
             #SevenContinents
             <!-- #5 #channels #icons now grouped in .channel-meta span -->
             <span class="channel-meta">
-                <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
-                <!-- #5 #channels #icons now with chevron -->
-                <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
+                <!-- #7 Replace all stars and chevrons with Font Awesome icons -->
+                <i class="fas fa-star"></i>
+                <i class="fas fa-chevron-right"></i>
             </span>
         </li>
         <!-- #6 #channels #click calls our switchChannel with the corresponding name as an argument -->
-        <li onclick="switchChannel('#KillerApp')">
+        <!-- #7 changing function arg from text to object names from channels.js-->
+        <li onclick="switchChannel(killerApp)">
             #KillerApp
             <!-- #5 #channels #icons now grouped in .channel-meta span -->
             <span class="channel-meta">
-                <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
-                <!-- #5 #channels #icons now with chevron -->
-                <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
+                <!-- #7 Replace all stars and chevrons with Font Awesome icons -->
+                <i class="far fa-star"></i>
+                <i class="fas fa-chevron-right"></i>
             </span>
         </li>
         <!-- #6 #channels #click calls our switchChannel with the corresponding name as an argument -->
-        <li onclick="switchChannel('#FirstPersonOnMars')">
+        <!-- #7 changing function arg from text to object names from channels.js-->
+        <li onclick="switchChannel(firstPersonOnMars)">
             #FirstPersonOnMars
             <!-- #5 #channels #icons now grouped in .channel-meta span -->
             <span class="channel-meta">
-                <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="starred">
-                <!-- #5 #channels #icons now with chevron -->
-                <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
+                <!-- #7 Replace all stars and chevrons with Font Awesome icons -->
+                <i class="fas fa-star"></i>
+                <i class="fas fa-chevron-right"></i>
             </span>
         </li>
         <!-- #6 #channels #click calls our switchChannel with the corresponding name as an argument -->
-        <li onclick="switchChannel('#Octoberfest')">
+        <!-- #7 changing function arg from text to object names from channels.js-->
+        <li onclick="switchChannel(octoberfest)">
             #Octoberfest
             <!-- #5 #channels #icons now grouped in .channel-meta span -->
             <span class="channel-meta">
-                <img src="http://ip.lfe.mw.tum.de/sections/star-o.png" alt="not starred">
-                <!-- #5 #channels #icons now with chevron -->
-                <img src="http://ip.lfe.mw.tum.de/sections/chevron-right.png" alt="select">
+                <!-- #7 Replace all stars and chevrons with Font Awesome icons -->
+                <i class="far fa-star"></i>
+                <i class="fas fa-chevron-right"></i>
             </span>
         </li>
 
@@ -86,14 +100,15 @@
     <div id="tab-bar">
         <!-- #6 #taptab buttons are getting ids with #hyphens and a #change listener calling selectTab.
              Pass the #argument to select Tab -->
+        <!-- #7 Change the tab bar’s icons to Font Awesome icons -->
         <button class="selected" id="tab-new" onclick="selectTab('#tab-new')">
-            <img src="http://ip.lfe.mw.tum.de/sections/lightbulb-o.png" alt="Bulb"> New
+            <i class="far fa-lightbulb"></i> New
         </button>
         <button id="tab-trending" onclick="selectTab('#tab-trending')">
-            <img src="http://ip.lfe.mw.tum.de/sections/fire.png" alt="Hot"> Trending
+                <i class="fas fa-fire"></i> Trending
         </button>
         <button id="tab-favorites" onclick="selectTab('#tab-favorites')">
-            <img src="http://ip.lfe.mw.tum.de/sections/star.png" alt="Star"> Favorites
+            <i class="fas fa-star"></i> Favorites
         </button>
     </div>
 </div>
@@ -107,7 +122,7 @@
         <!-- #6 #channels #location also needs an id -->
         <small id="channel-location">by <strong>cheeses.yard.applies</strong></small>
         <!-- #6 #liking channels requires a #filled star / with its #click listener -->
-        <img id="channel-star" src="http://ip.lfe.mw.tum.de/sections/star.png" alt="Favourite" onclick="star()">
+        <i id="channel-star" class="far fa-star" onclick="star()"></i>
     </h1>
 
     <!-- #5 #messages are now wrapped in a div to #scroll properly */ -->
@@ -162,7 +177,10 @@
 
     <!-- #5 #smileys #insert the chat-bar -->
     <div id="chat-bar"> <!-- #6 #smile #show the menu on click -->
-        <button id="emojis-button" onclick="toggleEmojis()"><img src="http://ip.lfe.mw.tum.de/sections/smile-o.png" alt="Smiley"></button>
+        <button id="emojis-button" onclick="toggleEmojis()">
+            <!-- #7 replace img by Font Awesome icon -->
+            <i class="far fa-smile"></i>
+        </button>
         <div id="emojis">&#x1F601; &#x1F602; &#x1F603; &#x1F604; &#x1F605; &#x1F606; &#x1F607;</div>
     </div>
 </div>

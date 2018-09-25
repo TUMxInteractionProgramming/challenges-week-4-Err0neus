@@ -129,8 +129,10 @@ li .channel-meta {
     top: 12px;
 }
 
-li img {
-    vertical-align: middle;
+
+i {
+    /* #7 Change the icon size to 24px */
+    font-size: 24px;
 }
 
 li.selected {
@@ -172,7 +174,8 @@ li.selected {
     border-bottom: 4px solid #3F51B5;
 }
 
-#tab-bar button img {
+/* #7 image formatting changed to Font Awesome icon */
+#tab-bar button i {
     display: block;
     margin: 0 auto 4px auto;
 }
