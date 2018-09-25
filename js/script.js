@@ -87,3 +87,52 @@ function toggleEmojis() {
 }
 
 
+/* #8 message constructor */
+function Message(text) {
+    this.createdBy = currentLocation.what3words;
+    this.latitude = currentLocation.latitude;
+    this.longitude = currentLocation.longitude;
+    this.createdOn = Date.now();
+    this.expiresOn = this.createdOn + (1000*60*15);
+    this.text = text;
+    this.own = true;
+}
+
+/* #8 calling global var for storing the message content */
+newMessageContent = ''
+
+/* #8 send message function */
+function sendMessage() {
+    newMessage = new Message('Hello Chatter');
+    console.log(newMessage);
+    createMessageElement(newMessage);
+    $("<div>").html(newMessageContent).appendTo("#messages");
+    /* #8 scroll the content up if no space for the new message */
+    updateScroll();
+}
+
+/* #8 creating message element function */
+function createMessageElement(messageObject) {
+    date = new Date(newMessage.createdOn);
+    var options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    newMessageContent = '<div class="message"><h3><a href=' 
+    + messageObject.createdBy 
+    + ' target="_blank"><strong>' 
+    + messageObject.createdBy
+    + '</strong></a> '
+    + date.toLocaleString('en-GB',options)
+    + '<em>'
+    + Math.round((((messageObject.expiresOn - Date.now()) % 86400000) % 3600000) / 60000)
+    + ' min. left</em></h3> <p>'
+    + messageObject.text
+    + '</p> <button>+5 min.</button> </div>'
+
+}
+
+
+/* #8 function to always display new message on the screen by scrolling content up */
+
+function updateScroll(){
+    var messages = document.getElementById('messages');
+    messages.scrollTop = messages.scrollHeight;
+}
