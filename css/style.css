@@ -188,6 +188,14 @@ li.selected {
     flex-grow: 0;
 }
 
+
+
+/* #8 send message arrow 
+#button-message-arrow {
+    position: absolute;
+    right: 0px;
+}*/
+
 #emojis {
     /* #5 #smileys #emojis menu */
     /* colors and borders */
@@ -214,12 +222,7 @@ li.selected {
     display: none;
 }
 
-/* #8 send message arrow */
-#button-message-arrow {
-    position: absolute;
-    right: 0px;
 
-}
 
 /* MESSAGES */
 
@@ -280,3 +283,21 @@ li.selected {
 .message.own {
     margin-left: 17.5%;
 }
+
+/* #8 message input */
+#chat-bar form {
+    border: none;
+    font-size: 1em;
+    flex-grow: 1;
+  }
+
+#chat-bar form input {
+    border: none;
+    height: 100%;
+    width: 100%;
+    font-size: 1em;
+    flex-grow: 1;
+
+}
+
+

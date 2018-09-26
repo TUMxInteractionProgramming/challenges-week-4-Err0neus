@@ -1,6 +1,6 @@
-/* #7 initiating challens as variables */
+/* #7 initiating channels as variables */
 
-var yummy = {
+var Yummy = {
     name: "Yummy",
     createdOn: new Date(2016,3,1),
     createdBy: "minus.plus.yummy",
@@ -9,38 +9,46 @@ var yummy = {
     messageCount: 999,
 };
 
-var sevenContinents = {
+var SevenContinents = {
     name: "SevenContinents",
     createdOn: new Date(2016,3,1),
     createdBy: "minus.plus.yummy",
-    starred: false,
-    expiresIn: 100,
-    messageCount: 999,
+    starred: true,
+    expiresIn: 60,
+    messageCount: 5,
 };
 
-var killerApp = {
+var KillerApp = {
     name: "KillerApp",
     createdOn: new Date(2016,3,1),
     createdBy: "minus.plus.yummy",
     starred: false,
-    expiresIn: 100,
-    messageCount: 999,
+    expiresIn: 1,
+    messageCount: 10351,
 };
 
-var firstPersonOnMars = {
+var FirstPersonOnMars = {
     name: "FirstPersonOnMars",
     createdOn: new Date(2016,3,1),
     createdBy: "minus.plus.yummy",
     starred: true,
-    expiresIn: 100,
-    messageCount: 999,
+    expiresIn: 30003,
+    messageCount: 2424,
 };
 
-var octoberfest = {
+var Octoberfest = {
     name: "Octoberfest",
     createdOn: new Date(2016,3,1),
     createdBy: "minus.plus.yummy",
     starred: false,
-    expiresIn: 100,
-    messageCount: 999,
+    expiresIn: 60,
+    messageCount: 321,
 };
+
+
+
+
+
+
+
+

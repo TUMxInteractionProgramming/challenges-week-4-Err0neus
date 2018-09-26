@@ -25,7 +25,7 @@
 
 
 </head>
-<body>
+<body onload="listChannels()">
 
 <!-- channel area -->
 <div id="channels">
@@ -37,63 +37,8 @@
     </h1>
 
     <!-- CHANNELS -->
-    <ul>
-        <!-- #6 #channels #click calls our switchChannel with the corresponding name as an argument -->
-        <!-- #7 changing function arg from text to object names from channels.js-->
-        <li onclick="switchChannel(yummy)">
-            #Yummy
-            <!-- #5 #channels #icons now grouped in .channel-meta span -->
-            <span class="channel-meta">
-                <!-- #7 Replace all stars and chevrons with Font Awesome icons -->
-                <i class="far fa-star"></i>
-                <i class="fas fa-chevron-right"></i>
-            </span>
-        </li>
-        <!-- #6 #channels #click calls our switchChannel with the corresponding name as an argument -->
-        <!-- #7 changing function arg from text to object names from channels.js-->
-        <li class="selected" onclick="switchChannel(sevenContinents)">
-            #SevenContinents
-            <!-- #5 #channels #icons now grouped in .channel-meta span -->
-            <span class="channel-meta">
-                <!-- #7 Replace all stars and chevrons with Font Awesome icons -->
-                <i class="fas fa-star"></i>
-                <i class="fas fa-chevron-right"></i>
-            </span>
-        </li>
-        <!-- #6 #channels #click calls our switchChannel with the corresponding name as an argument -->
-        <!-- #7 changing function arg from text to object names from channels.js-->
-        <li onclick="switchChannel(killerApp)">
-            #KillerApp
-            <!-- #5 #channels #icons now grouped in .channel-meta span -->
-            <span class="channel-meta">
-                <!-- #7 Replace all stars and chevrons with Font Awesome icons -->
-                <i class="far fa-star"></i>
-                <i class="fas fa-chevron-right"></i>
-            </span>
-        </li>
-        <!-- #6 #channels #click calls our switchChannel with the corresponding name as an argument -->
-        <!-- #7 changing function arg from text to object names from channels.js-->
-        <li onclick="switchChannel(firstPersonOnMars)">
-            #FirstPersonOnMars
-            <!-- #5 #channels #icons now grouped in .channel-meta span -->
-            <span class="channel-meta">
-                <!-- #7 Replace all stars and chevrons with Font Awesome icons -->
-                <i class="fas fa-star"></i>
-                <i class="fas fa-chevron-right"></i>
-            </span>
-        </li>
-        <!-- #6 #channels #click calls our switchChannel with the corresponding name as an argument -->
-        <!-- #7 changing function arg from text to object names from channels.js-->
-        <li onclick="switchChannel(octoberfest)">
-            #Octoberfest
-            <!-- #5 #channels #icons now grouped in .channel-meta span -->
-            <span class="channel-meta">
-                <!-- #7 Replace all stars and chevrons with Font Awesome icons -->
-                <i class="far fa-star"></i>
-                <i class="fas fa-chevron-right"></i>
-            </span>
-        </li>
-
+    <ul id="channel-list">
+        <!-- #8 these are now loaded by the body onload function-->
     </ul>
 
     <!-- TAB BAR -->
@@ -122,7 +67,7 @@
         <!-- #6 #channels #location also needs an id -->
         <small id="channel-location">by <strong>cheeses.yard.applies</strong></small>
         <!-- #6 #liking channels requires a #filled star / with its #click listener -->
-        <i id="channel-star" class="far fa-star" onclick="star()"></i>
+        <i id="channel-star" class="fas fa-star" onclick="star()"></i>
     </h1>
 
     <!-- #5 #messages are now wrapped in a div to #scroll properly */ -->
@@ -181,8 +126,17 @@
             <!-- #7 replace img by Font Awesome icon -->
             <i class="far fa-smile"></i>
         </button>
-        <div id="emojis">&#x1F601; &#x1F602; &#x1F603; &#x1F604; &#x1F605; &#x1F606; &#x1F607;</div>
-        <!-- #8 send message arrow buttton-->
+        
+        <div id="emojis">
+            &#x1F601; &#x1F602; &#x1F603; &#x1F604; &#x1F605; &#x1F606; &#x1F607;
+        </div>
+ 
+        <!-- #8 message input-->
+        <form>
+            <input id="message-input" type="text" value="Message..." maxlength="140">
+        </form>
+
+        <!-- #8 send message arrow button-->
         <button id="button-message-arrow" onclick="sendMessage()">
             <i class="fas fa-arrow-right"></i>
         </button>
